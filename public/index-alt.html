@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Lips Cafe | Your Cozy Little Hideout</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#add500",
+                        "on-primary-fixed": "#171e00",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "surface-bright": "#393939",
+                        "surface-container-high": "#2a2a2a",
+                        "outline": "#8e9379",
+                        "on-primary": "#293500",
+                        "secondary-fixed-dim": "#ffb0cd",
+                        "tertiary-container": "#e9ddff",
+                        "surface-variant": "#353535",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed": "#3e0022",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#23005c",
+                        "background": "#131313",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-error": "#690005",
+                        "on-secondary": "#640039",
+                        "inverse-primary": "#516600",
+                        "primary-fixed-dim": "#add500",
+                        "surface": "#131313",
+                        "surface-container": "#20201f",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#5516be",
+                        "primary": "#ffffff",
+                        "tertiary": "#ffffff",
+                        "secondary": "#ffb0cd",
+                        "on-secondary-fixed-variant": "#8c0053",
+                        "on-surface-variant": "#c4c9ad",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#ffd9e4",
+                        "secondary-container": "#aa0266",
+                        "error-container": "#93000a",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#3c0091",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#576c00",
+                        "on-tertiary-container": "#7342dd",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#c6f311",
+                        "outline-variant": "#444933",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-container": "#ffbad3",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed": "#c6f311"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Sora"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(198, 243, 17, 0.3);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 15px rgba(255, 176, 205, 0.3);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Sora', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
+    <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-7xl mx-auto">
+        <div class="font-headline-md text-headline-md font-extrabold tracking-tight text-primary-container">Lips Cafe</div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-label-sm text-label-sm text-primary-container border-b-2 border-primary-container pb-1" href="#menu">Menu</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#reviews">Reviews</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#location">Directions</a>
+        </div>
+        <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-sm text-label-sm neon-glow-primary hover:scale-105 transition-transform active:scale-95">
+            ORDER NOW
+        </button>
+    </nav>
+</header>
+
+<main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Cafe Interior" class="w-full h-full object-cover opacity-50" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect fill='%23131313' width='1200' height='600'/%3E%3C/svg%3E"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                Your Cozy Little <span class="text-primary-container">Hideout</span>
+            </h1>
+            <p class="text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                Escape the rush. Experience great food, pleasant vibes, and hospitality that feels like home. Tondiarpet's favorite spot for late-night cravings.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-sm text-label-sm flex items-center justify-center gap-2 neon-glow-primary hover:opacity-90 transition-all active:scale-95">
+                    <span class="material-symbols-outlined">restaurant_menu</span>
+                    EXPLORE MENU
+                </button>
+                <button class="glass-card text-on-surface px-8 py-4 rounded-xl font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-all active:scale-95">
+                    <span class="material-symbols-outlined">directions</span>
+                    GET DIRECTIONS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Vibe Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="inline-block px-4 py-1 rounded-full bg-secondary/10 text-secondary mb-6 font-label-sm text-label-sm border border-secondary/20">
+                THE VIBE
+            </span>
+            <h2 class="text-display-lg-mobile md:text-headline-md text-3xl font-bold mb-8 max-w-3xl mx-auto">
+                It's not just about the food, it's about how we <span class="text-secondary">treat and greet</span> you.
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="p-8 rounded-2xl glass-card border-secondary/10 flex flex-col items-center text-center group hover:border-secondary/30 transition-colors">
+                <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 text-secondary">
+                    <span class="material-symbols-outlined text-[32px]">favorite</span>
+                </div>
+                <h3 class="text-headline-md mb-2">Warm Welcomes</h3>
+                <p class="text-body-md text-on-surface-variant">Every guest is treated like family from the moment they step in.</p>
+            </div>
+            <div class="p-8 rounded-2xl glass-card border-primary-container/10 flex flex-col items-center text-center group hover:border-primary-container/30 transition-colors">
+                <div class="w-16 h-16 rounded-2xl bg-primary-container/10 flex items-center justify-center mb-6 text-primary-container">
+                    <span class="material-symbols-outlined text-[32px]">nightlight</span>
+                </div>
+                <h3 class="text-headline-md mb-2">Neon Nights</h3>
+                <p class="text-body-md text-on-surface-variant">The perfect urban atmosphere with cinematic lighting and deep funk.</p>
+            </div>
+            <div class="p-8 rounded-2xl glass-card border-tertiary-fixed-dim/10 flex flex-col items-center text-center group hover:border-tertiary-fixed-dim/30 transition-colors">
+                <div class="w-16 h-16 rounded-2xl bg-tertiary-fixed-dim/10 flex items-center justify-center mb-6 text-tertiary-fixed-dim">
+                    <span class="material-symbols-outlined text-[32px]">coffee</span>
+                </div>
+                <h3 class="text-headline-md mb-2">Cozy Nooks</h3>
+                <p class="text-body-md text-on-surface-variant">Designed for deep conversations and social comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Grid -->
+    <section id="menu" class="py-section-gap bg-surface-container-low">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+            <h2 class="text-display-lg-mobile md:text-headline-md text-3xl font-bold mb-12">Our <span class="text-primary-container">Signatures</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- The Sweet Spot -->
+                <div class="md:col-span-7 group relative overflow-hidden rounded-3xl h-[500px] border border-white/5">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-pink-600 to-orange-600 opacity-70"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-10">
+                        <span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm text-[10px] mb-4 inline-block">BEST SELLER</span>
+                        <h3 class="text-headline-md text-2xl font-bold mb-2">The Sweet Spot</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6 max-w-sm">Legendary Softy cones and craft ice creams that define our late-night experience.</p>
+                        <button class="font-label-sm text-label-sm text-primary-container flex items-center gap-2 group/btn hover:translate-x-2 transition-transform">
+                            VIEW SWEETS <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- The Crunch Corner -->
+                <div class="md:col-span-5 group relative overflow-hidden rounded-3xl h-[500px] border border-white/5">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-600 to-red-600 opacity-70"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-10">
+                        <h3 class="text-headline-md text-2xl font-bold mb-2">The Crunch Corner</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6">The ultimate crunch: French Fries and signature Fried Chicken.</p>
+                        <button class="font-label-sm text-label-sm text-secondary flex items-center gap-2 group/btn hover:translate-x-2 transition-transform">
+                            VIEW SIDES <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- The Main Bites -->
+                <div class="md:col-span-12 group relative overflow-hidden rounded-3xl h-[400px] border border-white/5">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-600 to-orange-600 opacity-60"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+                    <div class="absolute inset-y-0 left-0 p-10 flex flex-col justify-center max-w-md">
+                        <h3 class="text-headline-md text-2xl font-bold mb-2">The Main Bites</h3>
+                        <p class="text-body-md text-on-surface-variant mb-6">Stacked high and full of flavor. Our burgers are the talk of Tondiarpet.</p>
+                        <button class="bg-primary-container w-fit text-on-primary-container px-8 py-3 rounded-xl font-label-sm text-label-sm neon-glow-primary hover:scale-105 transition-transform active:scale-95">
+                            EXPLORE BURGERS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section id="reviews" class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+        <h2 class="text-display-lg-mobile md:text-headline-md text-3xl font-bold text-center mb-16">Love from the <span class="text-secondary">Locals</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="glass-card p-8 rounded-2xl flex flex-col h-full border-secondary/10">
+                <div class="flex gap-1 text-secondary mb-6">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-body-lg italic mb-8 flex-grow">"The softy here is literally the best in Chennai. The vibe is so chill, it's my go-to spot after work."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center font-bold text-secondary">A</div>
+                    <div>
+                        <div class="font-label-sm text-label-sm">Arun Kumar</div>
+                        <div class="text-[10px] uppercase tracking-wider text-on-surface-variant">Local Guide</div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl flex flex-col h-full border-primary-container/10">
+                <div class="flex gap-1 text-primary-container mb-6">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-body-lg italic mb-8 flex-grow">"Lips Cafe has this incredible neon aesthetic. It's not just about the food, the greeting is always so warm."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center font-bold text-primary-container">P</div>
+                    <div>
+                        <div class="font-label-sm text-label-sm">Priya S.</div>
+                        <div class="text-[10px] uppercase tracking-wider text-on-surface-variant">Regular Visitor</div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl flex flex-col h-full border-tertiary-fixed-dim/10">
+                <div class="flex gap-1 text-tertiary-fixed-dim mb-6">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <p class="text-body-lg italic mb-8 flex-grow">"The burgers are huge and juicy! Perfect hangout spot for late-night cravings with friends."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center font-bold text-tertiary-fixed-dim">S</div>
+                    <div>
+                        <div class="font-label-sm text-label-sm">Santhosh R.</div>
+                        <div class="text-[10px] uppercase tracking-wider text-on-surface-variant">Food Critic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer id="location" class="bg-surface-container-lowest w-full mt-24">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-7xl mx-auto">
+        <div class="space-y-6">
+            <div class="text-headline-md font-extrabold text-primary-container">Lips Cafe</div>
+            <p class="text-body-md text-on-surface-variant">Providing a cozy hideout and gourmet street food to the heart of Tondiarpet since 2021.</p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-on-surface hover:text-primary-container transition-colors" href="#">
+                    <span class="material-symbols-outlined">social_leaderboard</span>
+                </a>
+                <a class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-on-surface hover:text-secondary transition-colors" href="#">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </a>
+            </div>
+        </div>
+        <div class="space-y-6">
+            <h4 class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.2em]">Visit Us</h4>
+            <div class="space-y-4">
+                <div class="flex items-start gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-primary-container">location_on</span>
+                    <span class="text-body-md">625, Thiruvottiyur High Rd,<br/>Tondiarpet, Chennai, 600081</span>
+                </div>
+                <div class="flex items-center gap-3 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary">schedule</span>
+                    <span class="text-body-md">11:30 AM - Late Night</span>
+                </div>
+            </div>
+        </div>
+        <div class="relative h-56 rounded-2xl overflow-hidden glass-card bg-gradient-to-br from-green-600 to-emerald-600">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <a class="bg-surface-container/90 backdrop-blur-md text-on-surface px-6 py-3 rounded-lg font-label-sm text-[12px] flex items-center gap-2 border border-white/10 hover:scale-105 transition-transform" href="#">
+                    <span class="material-symbols-outlined text-[18px]">map</span>
+                    OPEN IN MAPS
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-white/5 py-8 text-center px-margin-mobile">
+        <p class="text-body-md text-on-surface-variant">© 2024 Lips Cafe. Crafted for Comfort.</p>
+    </div>
+</footer>
+
+<!-- Mobile Order FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center neon-glow-primary z-40 active:scale-90 transition-transform md:hidden shadow-lg">
+    <span class="material-symbols-outlined">shopping_cart</span>
+</button>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    document.querySelectorAll('.glass-card, .p-8, .rounded-3xl').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
