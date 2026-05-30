@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Star, Flame, Eye, ShoppingCart } from 'lucide-react';
 import { menuCategories, menuItems } from '../data/menuData';
+import LipsIcon from './LipsIcon';
 
 export default function MenuSection({ cart, onUpdateCart }) {
   const [activeCategory, setActiveCategory] = useState('ice-creams');
@@ -48,8 +49,11 @@ export default function MenuSection({ cart, onUpdateCart }) {
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary mb-4 font-bold text-[12px] border border-secondary/20 uppercase tracking-widest">
               Digital Ordering
             </span>
-            <h2 className="text-3xl md:text-5xl font-black">
-              Craving Something <span className="text-primary-container">Delicious?</span>
+            <h2 className="text-3xl md:text-5xl font-black relative">
+              Craving Something <span className="text-primary-container relative">
+                Delicious?
+                <LipsIcon className="absolute -top-7 -right-7 w-8 h-8 text-secondary/15 rotate-12 stroke-[1.2] hidden sm:block pointer-events-none" />
+              </span>
             </h2>
             <p className="text-on-surface-variant text-sm mt-2 max-w-lg font-light leading-relaxed">
               Explore our freshly prepared menu items and customize your order. Tap any item to add it to your live cart.

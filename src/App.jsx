@@ -8,6 +8,7 @@ import MenuSection from './components/MenuSection'
 import CartDrawer from './components/CartDrawer'
 import CheckoutModal from './components/CheckoutModal'
 import OrderConfirmation from './components/OrderConfirmation'
+import LipsIcon from './components/LipsIcon'
 
 function App() {
   const { scrollY } = useScroll()
@@ -135,6 +136,29 @@ function App() {
     }
   ]
 
+  const storytellingCards = [
+    {
+      title: "Unicorn Shakes & Craft Sweets",
+      desc: "Indulge in our legendary bubblegum softy sundaes and thick freakshakes. Crafted carefully for late-night cravings and sweet gossip.",
+      icon: "icecream",
+      colorClass: "text-secondary",
+      glowColor: "rgba(255, 176, 205, 0.25)"
+    },
+    {
+      title: "Neon-Soaked After Dark",
+      desc: "Experience Chennai's favorite cozy-funky nocturnal sanctuary. Chill beats, futuristic neon gradients, and a perfect urban coffee vibe.",
+      icon: "nightlife",
+      colorClass: "text-primary-container",
+      glowColor: "rgba(198, 243, 17, 0.25)"
+    },
+    {
+      title: "Gourmet Bites, Warm Welcomes",
+      desc: "Stacked double cheese burgers, loaded nachos, and crispy chicken strips. Shared platters meant for deep chats with friends.",
+      icon: "restaurant",
+      colorClass: "text-tertiary-fixed-dim",
+      glowColor: "rgba(208, 188, 255, 0.25)"
+    }
+  ];
 
   return (
     <div className="bg-[#131313] text-[#e5e2e1] overflow-hidden font-sans">
@@ -144,9 +168,11 @@ function App() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-extrabold tracking-tight text-primary-container"
+            className="flex items-center gap-2 cursor-pointer select-none"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            Lips Cafe
+            <LipsIcon className="w-6 h-6 text-secondary animate-pulse filter drop-shadow-[0_0_8px_rgba(255,176,205,0.7)]" strokeWidth={1.8} />
+            <span className="text-2xl font-extrabold tracking-tight text-[#ffffff]">Lips <span className="text-primary-container">Cafe</span></span>
           </motion.div>
           <div className="hidden md:flex gap-8">
             {['Menu', 'Reviews', 'Directions'].map((item) => (
@@ -176,6 +202,23 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-[85vh] flex items-center px-6 md:px-16 overflow-hidden pt-20">
+        {/* Floating Lips Motifs */}
+        <motion.div
+          animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          className="absolute top-48 right-12 text-secondary opacity-[0.03] pointer-events-none hidden lg:block"
+        >
+          <LipsIcon className="w-48 h-48" strokeWidth={0.8} />
+        </motion.div>
+        
+        <motion.div
+          animate={{ y: [0, 10, 0], rotate: [0, -4, 0] }}
+          transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+          className="absolute bottom-24 left-1/3 text-primary-container opacity-[0.02] pointer-events-none hidden lg:block"
+        >
+          <LipsIcon className="w-32 h-32" strokeWidth={1} />
+        </motion.div>
+
         {/* Parallax Background Image */}
         <motion.div 
           style={{ y: y1, opacity }}
@@ -264,8 +307,87 @@ function App() {
             <span className="material-symbols-outlined text-3xl">keyboard_double_arrow_down</span>
           </div>
         </motion.div>
-      </section>
+      </section>      {/* Lips Cafe Storytelling/About Section */}
+      <section id="vibe" className="py-20 px-6 max-w-7xl mx-auto relative">
+        {/* Subtle background glow behind heading */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[150px] bg-secondary/5 rounded-full filter blur-3xl opacity-30 pointer-events-none"></div>
+        
+        {/* Floating Background Motif */}
+        <motion.div
+          animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
+          transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+          className="absolute -bottom-10 right-10 text-primary-container opacity-[0.015] pointer-events-none hidden lg:block"
+        >
+          <LipsIcon className="w-36 h-36" strokeWidth={0.8} />
+        </motion.div>
 
+        <div className="text-center mb-16 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-center gap-2 mb-4"
+          >
+            <LipsIcon className="w-5 h-5 text-secondary animate-pulse" />
+            <span className="inline-block px-4 py-1 rounded-full bg-secondary/10 text-secondary font-bold text-[12px] border border-secondary/20 tracking-widest uppercase">
+              THE VIBE
+            </span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-extrabold mb-6 max-w-3xl mx-auto"
+          >
+            It's not just about the food, it's about how we <span className="text-secondary relative whitespace-nowrap">
+              treat and greet
+              {/* Subtle underline SVG glow */}
+              <span className="absolute bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-primary-container blur-sm opacity-60 rounded-full"></span>
+            </span> you.
+          </motion.h2>
+          <p className="text-on-surface-variant text-xs max-w-lg mx-auto font-light leading-relaxed">
+            Welcome to Lips Cafe, Tondiarpet's favorite cozy hideout. We blend late-night coffee-house aesthetics with playful design and premium hospitality.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+          {storytellingCards.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15 }}
+              whileHover={{ y: -8 }}
+              className="p-8 rounded-3xl glass-card border border-white/5 flex flex-col justify-between group transition-all duration-300 hover:border-white/12 relative overflow-hidden"
+              style={{ background: 'rgba(28, 27, 27, 0.65)' }}
+            >
+              {/* Hover Glow Behind Card */}
+              <div 
+                className="absolute -right-16 -top-16 w-32 h-32 rounded-full filter blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
+                style={{ backgroundColor: item.glowColor }}
+              ></div>
+
+              <div>
+                <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${item.colorClass}`}>
+                  <span className="material-symbols-outlined text-[28px]">{item.icon}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 font-display group-hover:text-[#ffffff] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-[#c4c9ad] text-xs leading-relaxed font-light">
+                  {item.desc}
+                </p>
+              </div>
+
+              {/* Glowing Corner Indicator */}
+              <div className="mt-6 flex items-center gap-1.5 text-[9px] uppercase font-bold tracking-widest text-on-surface-variant/40 group-hover:text-secondary/70 transition-colors">
+                <LipsIcon className="w-3.5 h-3.5" />
+                LIPS AFTER DARK
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* Menu Grid Section */}
       <section id="menu" className="py-20 bg-[#1c1b1b]">
@@ -385,7 +507,16 @@ function App() {
       <MenuSection cart={cart} onUpdateCart={handleUpdateCart} />
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 px-6 max-w-7xl mx-auto">
+      <section id="reviews" className="py-20 px-6 max-w-7xl mx-auto relative">
+        {/* Floating background lips behind reviews */}
+        <motion.div
+          animate={{ y: [0, -10, 0], rotate: [0, -4, 0] }}
+          transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
+          className="absolute top-10 left-10 text-secondary opacity-[0.015] pointer-events-none hidden lg:block"
+        >
+          <LipsIcon className="w-40 h-40" strokeWidth={0.8} />
+        </motion.div>
+
         <motion.h2 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -432,7 +563,7 @@ function App() {
             <div className="space-y-6">
               <div className="text-2xl font-extrabold text-primary-container">Lips Cafe</div>
               <p className="text-sm text-[#c4c9ad] leading-relaxed">
-                Providing a cozy hideout and gourmet street food to the heart of Tondiarpet since 2021.
+                Providing a cozy hideout and gourmet street food to the heart of Tondiarpet since 2025.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-[#e5e2e1] hover:text-primary-container border border-white/10 transition-colors">
@@ -456,7 +587,7 @@ function App() {
                 </div>
                 <div className="flex items-center gap-3 text-[#c4c9ad]">
                   <span className="material-symbols-outlined text-secondary">schedule</span>
-                  <span className="text-sm">11:30 AM - Late Night</span>
+                  <span className="text-sm">11:30 AM - 3:00 AM (Late Night)</span>
                 </div>
               </div>
             </div>
